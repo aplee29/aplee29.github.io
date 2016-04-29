@@ -1,0 +1,21 @@
+# Site settings
+title: My Coding Blog
+header-img: img/home-bg.png
+email: aplee29@gmail.com
+copyright_name: aplee29
+description: > # this means to ignore newlines until "baseurl:"
+  Information regarding technical blog posts, coding projects, etc.
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: 
+github_username:  aplee29
+learn_profile: aplee29
+email_username: aplee29@gmail.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
