@@ -1,0 +1,7 @@
+---
+layout: post
+title:  CLI Post Trial
+date:   2016-05-12 
+---
+
+Information about CLI here.
