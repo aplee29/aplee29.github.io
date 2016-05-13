@@ -4,7 +4,7 @@ title:  What was the most difficult part of learning HTML5?
 date:   2016-05-13 04:14:55 -0400
 ---
 
-The trickiest aspect that I came across when learning HTML5 was **browser compatibility issues**. This problem was covered in the last two lessons of the HTML5 series: *HTML5 Media* and *HTML5 Semantic Elements*.
+The trickiest part that I came across when learning HTML5 was **browser compatibility issues**. This problem was covered in the last two lessons of the HTML5 series: *HTML5 Media* and *HTML5 Semantic Elements*.
 
 ## HTML5 Media
 With the advent of HTML5 came the introduction of the **video** element, which allows sites to render video without relying on the previously used Adobe Flash plugin. 
@@ -21,7 +21,7 @@ As we can see, .mp4 is the most widely supported video format, but by itself, ca
 
 In addition, we as programmers must also consider the possibility of users using outdated browsers. To address this issue, we must provide a source element that corresponds to each browser's media type. A browser that does not recognize a specified audio or video element can simply skip until it finds an alternative source type that it does understand. Generally, it is recommended to include at least two different video formats to ensure close to perfect compatibility across all browsers and devices. 
 
-```
+```html
 <video>
   <source src=”movie.mp4” type=”video/mp4”> 
   <source src=”movie.ogv” type=”video/ogg”> 
