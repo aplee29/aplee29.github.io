@@ -47,10 +47,10 @@ HTML5 introduces another new concept called **semantic elements**. In previous H
 
 Instead of having to name each `div` element directly, we can use the **semantic element** that comes predefined with HTML5. Not only is this more concise, but this new labeling allows even beginner coders to know exactly what each element does. This is an excellent improvement but again, we come across the same issue as mentioned before: *how do we support older browsers that may not recognize HTML5?* 
 
-## Modernizr
+### Modernizr
 Modernizr is a JS library that looks for a browser's current HTML5 / CSS3 settings, and provides additional support if necessary. Inside the HTML page, a link to the file should be placed within the `<script>` tags. 
 
-## Normalize
+### Normalize
 Normalize supports cross-browser consistency for styling. A link to the *normalize.css* file should be placed within the `<link>` tags of the HTML document. 
 
 In order to avoid incompatibility issues and provide an enjoyable experience for the user, it is important to consider a website's interaction with and performance across all devices and browsers. Aiming for a responsive web design is a key component in attaining high user experience / satisfaction. 
