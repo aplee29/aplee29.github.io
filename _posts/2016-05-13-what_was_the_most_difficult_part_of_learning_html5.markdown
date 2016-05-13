@@ -45,7 +45,7 @@ HTML5 introduces another new concept called **semantic elements**. In previous H
 | `<div id = "sidebar">` | `<aside>` |
 | `<div id = "footer"> `| `<footer>` |
 
-Instead of having to name each `div` element directly, we can use the **semantic element** that comes predefined with HTML5. Not only is this more concise, but this new labeling allows even beginner coders to know exactly what each element does. This is an excellent improvement but again, we come across the same issue as mentioned before: *how do we support older browsers that may not recognize HTML5?* 
+Instead of having to name each `div` element directly, we can use the **semantic element** that comes predefined with HTML5. Not only is this more concise, but this new labeling allows even beginner coders to know exactly what each element does. This is an excellent improvement but again, we come across the same issue as mentioned before. *How do we support older browsers that may not recognize HTML5?* 
 
 ### Modernizr
 Modernizr is a JS library that looks for a browser's current HTML5 / CSS3 settings, and provides additional support if necessary. Inside the HTML page, a link to the file should be placed within the `<script>` tags. 
