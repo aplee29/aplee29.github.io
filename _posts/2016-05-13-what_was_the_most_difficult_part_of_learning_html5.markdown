@@ -31,7 +31,7 @@ In addition, we as programmers must also consider the possibility of users using
 
 In the event that an older browser does not support any of the listed media elements, fallback content like the following should be provided:
 
-```
+```html
 Your browser does not support HTML5 video. <a href="http://browsehappy.com" target="_blank">Please upgrade your browser</a>.
 ```
 
