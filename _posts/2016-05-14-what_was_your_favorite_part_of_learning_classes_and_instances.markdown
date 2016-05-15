@@ -97,4 +97,4 @@ puts patrasche.my_owner
  
 Now, we see that Patrasche's new owner is *John*. After the `#get_adopted` instance method call, the `#owner` setter method was invoked on the object itself (via `self`), which assigned the `@owner` instance variable equal to the name of the new owner. Thus, calling the `#my_owner` instance method on the `patrasche` object (`puts patrasche.my_owner`) returns the string value `"My owner is John."`
 
-OOP allows a program to abstract away all the fine details that the user does not need to know. Instead, it focuses on clarity and understandability of the program's logic and syntax. 
+OOP allows a program to abstract all the fine details that the user does not need to know. Instead, it focuses on clarity and understandability of the program's logic and syntax. 
