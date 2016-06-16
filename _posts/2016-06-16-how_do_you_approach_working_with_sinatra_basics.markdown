@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How do you approach working with Sinatra Basics?"
-date:   2016-06-16 11:12:35 +0000
+date:   2016-06-16 07:12:35 -0400
 ---
 
 What I found most interesting about Sinatra was the way in which it was introduced into the curriculum. Sandwiched between *Rack* and *Rails*, Sinatra offers a solid introduction to creating simple, lightweight web applications. Web development can be an overwhelming project, but luckily, there are universally accepted standards that every web application should adhere to. For example, every web app should be able to provide routing services for handling client requests. Web frameworks are an excellent means of abstracting the common patterns and features of web applications, thereby allowing the developer to focus on defining the logic of the application rather than building each individual component of it.  
@@ -28,6 +28,6 @@ class App < Sinatra::Base
 end
 ```
 
-A **route** is composed of an HTML method (e.g. `GET` or `POST`) and its URL-matching pattern (its resource/path). After starting up the server (let's use Shotgun for this example), the user inputs http://localhost:9393/hello into the browser, and our application receives the request `GET /hello`. The request is subsequently matched to its corresponding controller route, and the application executes the code nested inside the action's block. In this case, the response "Hello world!" is returned and rendered to the user.  
+A **route** is composed of an HTML method (e.g. `GET` or `POST`) and its URL-matching pattern (its resource/path). After starting up the server (let's use Shotgun for this example), the user inputs `http://localhost:9393/hello` into the browser, and our application receives the request `GET /hello`. The request is subsequently matched to its corresponding controller route, and the application executes the code nested inside the action's block. In this case, the response "Hello world!" is returned and rendered to the user.  
 
 This is just a very basic idea of Sinatra, and there are many other route patterns like `POST`, `PUT`, `PATCH`, and `DELETE`. Understanding the fundamental concepts behind Sinatra is a great way to prepare for the higher level features and functionalities seen in Rails.
