@@ -80,7 +80,7 @@ def self.scrape_themes # Scrapes main page
 end
 ```
 
-The refactored method instantiates a new Theme object, assigns it a name (*theme_name*) and description (*theme_desc), and then creates a new array for pushing in each subsequent Coffee object. This is a much cleaner and more efficient means of reproducing the Theme-Coffee relationship, as opposed to the former method of creating a mixed array, converting it into a hash, etc. Now that we scraped the entire main page and saved all its contents, I was able to refactor the following scraper method.
+The refactored method instantiates a new Theme object, assigns it a name (*theme_name*) and description (*theme_desc*), and then creates a new array for pushing in each subsequent Coffee object. This is a much cleaner and more efficient means of reproducing the Theme-Coffee relationship, as opposed to the former method of creating a mixed array, converting it into a hash, etc. Now that we scraped the entire main page and saved all its contents, I was able to refactor the following scraper method.
 
 ```ruby
 def self.scrape_coffees(url) # Scrapes individual coffee page
@@ -105,7 +105,7 @@ def self.scrape_coffees(url) # Scrapes individual coffee page
 end
 ```
 
-Here, I defined a new class method `.find_by_name`, which takes the `coffee_name` that is scraped from the individual coffee's page, and looks for the instance with that name from the Coffee class's @@all array. Once the matching coffee has been found, additional properties such as the description (*coffee_desc*), tasting notes (*tasting_notes*), roast (*roast*), and available types (*available_in*) are assigned to the object.
+Here, I defined a new class method `.find_by_name`, which takes the `coffee_name` that is scraped from the individual coffee's page, and looks for the instance with that name from the Coffee class's `@@all` array. Once the matching coffee has been found, additional properties such as the description (*coffee_desc*), tasting notes (*tasting_notes*), roast (*roast*), and available types (*available_in*) are assigned to the object.
 
 # Final Comments
 Please click [here](https://www.youtube.com/watch?v=RjRYueu_ozE) to view the walkthrough video of my CLI gem. 
