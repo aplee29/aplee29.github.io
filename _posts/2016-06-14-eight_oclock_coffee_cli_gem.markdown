@@ -51,76 +51,61 @@ Once I laid out the foundation for my CLI in pseudocode, I began to implement th
 To implement the logic for the program, I defined three classes: Theme, Coffee, and Scraper. Each class has a specific, exclusive responsibility. For example, the Theme class is solely responsible for creating Theme instances, which holds data about each theme, as well as the coffees related to it. The Coffee class creates instances of each coffee, which stores various properties such as its *roast* and *description*. The Scraper class uses Nokogiri to scrape all the contents from the webpages, such as the theme name, theme description, coffee name, coffee URL, etc.
 
 # Issues
-One of the biggest hurdles I faced in this project was associating coffee objects to their respective themes. It was difficult to replicate this relationship using the scraped data. Scraping was a tricky task that required a lot of precision. If I chose CSS selectors that weren't accurate or specific enough, I would end up scraping extra content that I didn't want or need. 
 
-To work around this issue, I first instantiated a new object for each theme, and assigned values to its name (*theme_name*) and description (*theme_desc*) attributes using the scraped data. "Saving" the new Theme objects via `theme.save` allowed the objects to be stored in the Theme class's @@all array.
-
-Within the same @@all array, I also wanted to be able to store all the coffee objects that were associated to the particular theme. Somehow, I had to find that link within the HTML itself. Upon closer inspection, I was able to find the CSS selector for each coffee, which included the name of the theme in string format. Using Pry, I ran `@doc.css(".varitieslists div").first.attributes["id"].value`, which yielded the string `varitieBlock1_C032_rptBeginnings_liBeginnings_0`. Bingo!
-
-Now, all I had to do was clean up the string so that it returned something like `BEGINNINGS`. I was able to successfully associate each coffee to its theme. After instantiating a new Coffee object, I assigned its name (*coffee_name*), URL (*coffee_url*), and theme name (*theme_name*), and saved each coffee instance to the Theme's @@all array.
+**Update:** Following the assessment, I was able to not only refactor a majority of the code but also resolve the troublesome issue of associating coffees to their themes.
 
 ```ruby
-def scrape_themes 
+def self.scrape_themes # Scrapes main page
   @doc = Nokogiri::HTML(open("http://www.eightoclock.com/coffee-varieties"))
   @doc.css(".headingVarity .sfContentBlock").each do |theme_div|
     theme = EightOclockCoffee::Theme.new
 
     theme.theme_name = theme_div.css("h3 span").text.upcase
     theme.theme_desc = theme_div.css("p").text
-    theme.save
+    theme.coffees = []
 
+    # Scrapes names and URLs of each coffee on main page
     @doc.css(".varitieslists div").each do |coffee_div|
       # e.g. Checks if theme name is included in the coffee's id attribute (coffee belongs to the theme)
       if coffee_div.attributes["id"].value.downcase.include?(theme.theme_name.downcase)
         coffee = EightOclockCoffee::Coffee.new
 
+        theme.coffees << coffee
+
         coffee.coffee_name = coffee_div.css("a").attr("title").value
         coffee.coffee_url = "http://www.eightoclock.com#{coffee_div.css("a").attr("href").value}"
-        coffee.theme_name = coffee_div.attributes["id"].value.split("_")[-2].split("li")[-1].upcase
-        coffee.save_to_theme
       end
     end
   end
-  EightOclockCoffee::Theme.divide_coffees_by_theme
 end
 ```
 
-Now, when we introspect on the Theme's @@all array, it returns an array of Theme and Coffee objects in successive order. However, I was looking for a hash format, with keys that represent the names of each theme and values that represent the objects that are associated with that theme. 
+The refactored method instantiates a new Theme object, assigns it a name (*theme_name*) and description (*theme_desc), and then creates a new array for pushing in each subsequent Coffee object. This is a much cleaner and more efficient means of reproducing the Theme-Coffee relationship, as opposed to the former method of creating a mixed array, converting it into a hash, etc. Now that we scraped the entire main page and saved all its contents, I was able to refactor the following scraper method.
 
 ```ruby
-def self.divide_coffees_by_theme
-  @@all_by_theme << @@all.group_by{|element| element.theme_name}
-end
-```
+def self.scrape_coffees(url) # Scrapes individual coffee page
+  @doc = Nokogiri::HTML(open(url))
+  @doc.css(".productDescription").each do |coffee_info|
+    coffee_name = coffee_info.css("h2").text.strip
+    
+    # Finds the existing coffee instance by name
+    coffee = EightOclockCoffee::Coffee.find_by_name(coffee_name)
 
-This method converts the @@all array to the format described above. 
+    coffee.coffee_desc = coffee_info.css("p").text.strip.split("\r")[0]
+    coffee.tasting_notes = coffee_info.css(".subblock p").text.strip.split("\r")[0]
+    coffee.roast = coffee_info.css(".subblock p").text.strip.split("\r")[1].strip
 
-Fortunately, scraping each individual coffee's page was much simpler. Based on the user's theme and coffee selections, I implemented the following Scraper method to retrieve the desired results: 
-
-```ruby
-  def scrape_coffees(url) 
-    @doc = Nokogiri::HTML(open(url))
-    @doc.css(".productDescription").each do |coffee_info|
-      coffee = EightOclockCoffee::Coffee.new
-
-      coffee.coffee_name = coffee_info.css("h2").text.strip
-      coffee.coffee_desc = coffee_info.css("p").text.strip.split("\r")[0]
-      coffee.tasting_notes = coffee_info.css(".subblock p").text.strip.split("\r")[0]
-      coffee.roast = coffee_info.css(".subblock p").text.strip.split("\r")[1].strip
-
-      availabilities = []
-      @doc.css(".subblock ul li").collect do |availability|
-        availabilities << availability.css("img").attr("alt").value unless availability.attributes["style"].value == "display:none;"
-      end
-      coffee.available_in = availabilities.join(", ")
-      coffee.save
+    availabilities = []
+    @doc.css(".subblock ul li").each do |availability|
+      availabilities << availability.css("img").attr("alt").value unless availability.attributes["style"].value == "display:none;"
     end
+    coffee.available_in = availabilities.join(", ")
+    coffee.save
   end
+end
 ```
 
-This creates a new Coffee instance, and assigns the relevant attributes using the scraped data. The final portion of the CLI uses the newly created coffee object to print out its details to the user.
+Here, I defined a new class method `.find_by_name`, which takes the `coffee_name` that is scraped from the individual coffee's page, and looks for the instance with that name from the Coffee class's @@all array. Once the matching coffee has been found, additional properties such as the description (*coffee_desc*), tasting notes (*tasting_notes*), roast (*roast*), and available types (*available_in*) are assigned to the object.
 
 # Final Comments
 Please click [here](https://www.youtube.com/watch?v=RjRYueu_ozE) to view the walkthrough video of my CLI gem. 
-
-Lastly, I plan to publish the gem after reviewing and refactoring the code with a Learn instructor. 
