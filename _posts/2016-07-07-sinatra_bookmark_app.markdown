@@ -27,16 +27,21 @@ Below are the details outlining the project's requirements, as well as the proce
 For this project, I based the domain model on a bookmark application, which contains three classes: **User**, **Topic**, and **Site**. The following chart illustrates the relationships among the three classes. 
 
 | **User**          | **Topic** |  **Site**  | 
-| ----------------- |:---------:| ----------:|
+| ----------------- | --------- | ---------- |
 | `username`        | `name`    | `name`     |
 | `password_digest` | `user_id` | `url`      |
 |                   |           | `topic_id` |
 
 The following associations can be drawn:
+
   1. A **User** has many **Topics**.
+
   2. A **User** has many **Sites** through **Topics**.
+
   3. A **Topic** belongs to a **User**. (Has the foreign key `user_id`)
+
   4. A **Topic** has many **Sites**.
+
   5. A **Site** belongs to a **Topic**. (Has the foreign key `topic_id`)
 
 Since there was no initial framework to build off of, preparing an association map in advance proved to be very helpful. This is also useful when creating migrations for each table of the database, where each class represents a table. 
