@@ -8,14 +8,4 @@ Filters are functions that can be implemented in AngularJS to manipulate, or *fi
 
 These are a few of the built-in filters provided by AngularJS:
 
-* **currency** : number -> currency
-* **date** : date -> string based on desired format
-* **number** : number -> string
-* **lowercase** : string -> lowercase
-* **uppercase** : string -> uppercase
-
-In the view, a filter can be applied to an expression using a pipe symbol, |. 
-
 The generic syntax for a filter is: `{{ expression | filter }}`.
-
-
