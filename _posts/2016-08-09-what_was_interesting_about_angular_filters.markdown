@@ -1,20 +1,22 @@
 ---
 layout: post
 title:  "What was interesting about Angular Filters?"
-date:   2016-08-09 04:12:43 +0000
+date:   2016-08-09 00:12:43 -0400
 ---
 
 Filters are functions that can be implemented in AngularJS to manipulate, or *filter* data. One aspect that I found to be particularly useful was the way in which filters can be used to easily display data to users of a web application.
 
 These are a few of the built-in filters provided by AngularJS:
 
-* `currency`: number -> currency
-* `date`: date -> string based on desired format
-* `number`: number -> string
-* `lowercase`: string -> lowercase
-* `uppercase`: string -> uppercase
+* `currency` : number -> currency
+* `date` : date -> string based on desired format
+* `number` : number -> string
+* `lowercase` : string -> lowercase
+* `uppercase` : string -> uppercase
 
-In the view, a filter can be applied to an expression by using the pipe symbol `|`.  The generic syntax for a filter is `{{ expression | filter }}`. Filters can also have its own filter criteria, or argument. This can be represented as: `{{ expression | filter:argument }}`. 
+In the view, a filter can be applied to an expression by using the pipe symbol `|`.  
+The generic syntax for a filter is `{{ expression | filter }}`. 
+Filters can also have its own filter criteria, or argument. This can be represented as: `{{ expression | filter:argument }}`. 
 
 Let's consider the following examples:
 
