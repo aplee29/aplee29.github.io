@@ -8,7 +8,7 @@ Filters are functions that can be implemented in AngularJS to manipulate, or *fi
 
 {{ "{{ this " }}}}
 
-{{ "{{ this | filter " }}}}
+`{{ "{{ this "| "" }}}}`
 
 These are a few of the built-in filters provided by AngularJS:
 
