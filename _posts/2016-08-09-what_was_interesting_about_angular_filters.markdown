@@ -16,10 +16,10 @@ These are a few of the built-in filters provided by AngularJS:
 
 In the view, a filter can be applied to an expression by using the pipe symbol `|`.  
 The generic syntax for a filter is: 
-```html
-<abbr>
-	{{ ctrl.date | date:'medium' }} <!-- Dec 25, 2016 2:23:56 PM -->
-</abbr>
+
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
 ```
 
 ```html
