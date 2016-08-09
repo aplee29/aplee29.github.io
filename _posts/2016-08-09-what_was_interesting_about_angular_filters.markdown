@@ -14,7 +14,8 @@ These are a few of the built-in filters provided by AngularJS:
 * **lowercase** : string -> lowercase
 * **uppercase** : string -> uppercase
 
-In the view, a filter can be applied to an expression by using the pipe symbol `|`.  
+In the view, a filter can be applied to an expression by using the pipe symbol **|**.
+
 The generic syntax for a filter is: `{{ expression | filter }}`.
 
 Filters can also have its own filter criteria, or argument. This can be represented as: `{{ expression | filter:argument }}`. 
