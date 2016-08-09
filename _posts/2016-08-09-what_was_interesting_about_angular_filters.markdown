@@ -6,8 +6,6 @@ date:   2016-08-09 00:12:43 -0400
 
 Filters are functions that can be implemented in AngularJS to manipulate, or *filter* data. One aspect that I found to be particularly useful was the way in which filters can be used to easily display data to users of a web application.
 
-`ctrl.date | date:'medium'`
-
 These are a few of the built-in filters provided by AngularJS:
 
 * `currency` : number -> currency
@@ -17,7 +15,10 @@ These are a few of the built-in filters provided by AngularJS:
 * `uppercase` : string -> uppercase
 
 In the view, a filter can be applied to an expression by using the pipe symbol `|`.  
-The generic syntax for a filter is: {{ expression | filter }}
+The generic syntax for a filter is: 
+```js
+{{ expression | filter }}
+```
 
 Filters can also have its own filter criteria, or argument. This can be represented as: {{ expression | filter:argument }}. 
 
