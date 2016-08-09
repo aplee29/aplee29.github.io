@@ -8,4 +8,6 @@ Filters are functions that can be implemented in AngularJS to manipulate, or *fi
 
 These are a few of the built-in filters provided by AngularJS:
 
-The generic syntax for a filter is: `{{ expression | filter }}`.
+The generic syntax for a filter is: `[[ expression | filter ]]`.
+
+This can be represented as: `[[ expression | filter:argument ]]`.
