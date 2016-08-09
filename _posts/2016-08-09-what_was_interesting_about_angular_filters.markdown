@@ -16,8 +16,8 @@ These are a few of the built-in filters provided by AngularJS:
 
 In the view, a filter can be applied to an expression by using the pipe symbol `|`.  
 The generic syntax for a filter is: 
-```js
-{{ expression | filter }}
+```html
+<span>{{ expression | filter }}</span>
 ```
 
 Filters can also have its own filter criteria, or argument. This can be represented as: {{ expression | filter:argument }}. 
