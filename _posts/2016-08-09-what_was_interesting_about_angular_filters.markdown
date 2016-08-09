@@ -18,7 +18,13 @@ In the view, a filter can be applied to an expression by using the pipe symbol `
 
 **Important Note: For some reason, this blog post can't display double curly braces { }. Basically, I had to work around this issue by using double square brackets [ ] instead. So wherever there are square brackets in the code below, just note that the actual syntax requires curly braces.**
 
-The generic syntax for a filter is: `\\{{ expression | filter \\}}`.
+The generic syntax for a filter is:
+```
+{% raw %}
+{{ expression | filter }}
+{% endraw %}
+```
+`{{ expression | filter }}`.
 
 Filters can also have its own filter criteria, or argument. This can be represented as: `[[ expression | filter:argument ]]`. 
 
