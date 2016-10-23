@@ -6,7 +6,7 @@ date:   2016-07-07 00:58:39 -0400
 
 For the second assessment, I created a simple Content Management System, a.k.a. a **CRUD** (Create Read Update Delete) app. 
 
-Below are the details outlining the project's requirements, as well as the procedures that were undertaken in completing this gem.
+Below are the details outlining the project's requirements, as well as the procedures that were undertaken in completing this project.
 
 # Project Requirements
   1. Build an MVC Sinatra Application.
