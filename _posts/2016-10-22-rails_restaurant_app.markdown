@@ -74,7 +74,6 @@ The main issue I came across was deciding on the layout for my app. In terms of 
 <%= form_for(@review) do |f| %>
   
   <%= f.fields_for :restaurant do |restaurant_field| %>
-
     <%= restaurant_field.label :name %>
     <%= restaurant_field.text_field :name, size: 30, autofocus: true %>
 
@@ -89,7 +88,6 @@ The main issue I came across was deciding on the layout for my app. In terms of 
 
     <%= restaurant_field.label :category_id %>
     <%= restaurant_field.collection_select :category_id, Category.all, :id, :name, prompt: true %>
-    
   <% end %>
 
   <hr>
