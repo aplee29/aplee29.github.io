@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  JQuery Rails Restaurant App
+title:  Rails Restaurant App with jQuery Front End
 date:   2017-01-12 00:58:39 -0400
 ---
 
