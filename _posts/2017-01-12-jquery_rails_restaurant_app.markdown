@@ -8,7 +8,7 @@ Piggybacking on the previous [Rails app](http://aplee29.github.io/2016/10/22/rai
 
 Below are the details outlining the project's requirements.
 
-## Project Requirements
+#Project Requirements
   1. Must render at least one index page (index resource - 'list of things') via jQuery and an Active Model Serialization JSON Backend.
 
   2. Must render at least one show page (show resource - 'one specific thing') via jQuery and an Active Model Serialization JSON Backend.
