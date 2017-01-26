@@ -122,5 +122,6 @@ end
 
 Here, we are able to access `.sites` for `current_user` because of the `has_many :sites, through: :topics` association that was defined in the User model. This method call not only looks for all sites belonging to the user, but it also implicitly checks whether or not the user is logged in in the first place.
 
-# Final Comments
-Please click [here](https://www.youtube.com/watch?v=_RevN_La2qs) to view the walkthrough video of my Sinatra application. 
+# Video Walkthrough
+
+<iframe width="850" height="480" src="https://www.youtube.com/embed/_RevN_La2qs" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
