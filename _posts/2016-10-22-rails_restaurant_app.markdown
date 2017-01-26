@@ -128,5 +128,6 @@ end
 
 Using the values collected from posting our nested form, the application checks to see if the restaurant with the specified `name` has already been persisted to the database. If it has, the restaurant object is returned without saving a duplicate. If it's not, the app will create the new restaurant using the given properties. As an example, let's say that a user writes a new review for "Burger King". He is completely unaware that this fast food restaurant has already been created, and he proceeds to enter all of its details. Once the form has been submitted, however, the application will ignore all the restaurant information provided by our user and instead, simply add his review to the existing restaurant.
 
-# Final Comments
-Please click [here](https://www.youtube.com/watch?v=U_CO_DXH2bQ) to view the walkthrough video of my Rails application. 
+# Video Walkthrough
+
+<iframe width="850" height="480" src="https://www.youtube.com/watch?v=U_CO_DXH2bQ" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
