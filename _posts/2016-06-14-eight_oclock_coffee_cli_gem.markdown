@@ -107,5 +107,6 @@ end
 
 Here, I defined a new class method `.find_by_name`, which takes the `coffee_name` that is scraped from the individual coffee's page, and looks for the instance with that name from the Coffee class's `@@all` array. Once the matching coffee has been found, additional properties such as the description (*coffee_desc*), tasting notes (*tasting_notes*), roast (*roast*), and available types (*available_in*) are assigned to the object.
 
-# Final Comments
-Please click [here](https://www.youtube.com/watch?v=RjRYueu_ozE) to view the walkthrough video of my CLI gem. 
+# Video Walkthrough
+
+<iframe width="850" height="480" src="https://www.youtube.com/embed/RjRYueu_ozE" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
