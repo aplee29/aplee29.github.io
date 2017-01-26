@@ -117,8 +117,6 @@ Clicking on the "View" link (which is assigned the `.show-review` class) allows 
 
 After finding the desired review, we create a new object `user` instantiated off of the User prototype object, passing in the `rating` and `comment` properties. The `.showReview` function is added to the prototype, which selects the <div> with the `data-id` attribute equal to the review and renders its `rating` and `comment` in the HTML.
 
-# Final Comments
+# Video Walkthrough
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NWPBbP68j0A" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
-
-Please click [here](https://www.youtube.com/watch?v=NWPBbP68j0A) to view the walkthrough video of my Rails with jQuery application. 
+<iframe width="850" height="480" src="https://www.youtube.com/embed/NWPBbP68j0A" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
