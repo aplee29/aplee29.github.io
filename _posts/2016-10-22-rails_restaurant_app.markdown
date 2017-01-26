@@ -130,4 +130,4 @@ Using the values collected from posting our nested form, the application checks 
 
 # Video Walkthrough
 
-<iframe width="850" height="480" src="https://www.youtube.com/watch?v=U_CO_DXH2bQ" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
+<iframe width="850" height="480" src="https://www.youtube.com/embed/U_CO_DXH2bQ" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
